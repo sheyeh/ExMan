@@ -27,3 +27,11 @@ class User(AbstractEmailUser):
 
     def get_short_name(self):
         return self.full_name
+
+class Account(models.Model):
+    name = models.CharField(max_length=80)
+
+    user = models.ForeignKey(User)
+
+    def __str__(self):
+        return self.name + " (" + str(self.user) + ")"

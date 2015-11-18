@@ -2,7 +2,7 @@
 
 
 {% block header %}
-    Your expenses
+    {{object}}
 {% endblock %}
 
 
@@ -15,7 +15,7 @@
             <th>Amount</th>
             <th>Details</th>
         </tr>
-        {% for expense in object_list %}
+        {% for expense in object.expense_set.all %}
             <tr>
                 <td><a href="/account/{{expense.account.pk}}">{{ expense.account }}</td>
                 <td>{{ expense.timestamp }}</td>

@@ -21,6 +21,7 @@ class AddView(LoginRequiredMixin, CreateView):
     fields = (
         'timestamp',
         'amount',
+        'account',
         'details',
     )
     success_url = reverse_lazy("home")
@@ -28,3 +29,4 @@ class AddView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+
