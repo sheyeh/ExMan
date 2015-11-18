@@ -34,4 +34,4 @@ class Account(models.Model):
     user = models.ForeignKey(User)
 
     def __str__(self):
-        return self.name + " (" + str(self.user) + ")"
+        return self.name
